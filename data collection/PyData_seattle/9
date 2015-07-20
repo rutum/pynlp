@@ -1,0 +1,24 @@
+Friday 1 p.m.–3 p.m.
+Tom Augspurger
+-----
+Title
+-----
+Pandas: .head() to .tail()
+-----
+Description
+-----
+Pandas is an extremely powerful library for data analysis. With that power comes complexity. This tutorial will focus on the core features of pandas, which handle most data munging tasks. The empahsis will be on practical applications, illustrating solutions to common problems using real-world data.
+-----
+Abstract
+-----
+The motivation of this tutorial mirrors that of pandas itself: practicality. A brief discussion on the problems pandas tries to solve will help frame the rest of the tutorial. We'll aim for an intuitive understanding of each new method and data structure. This will help keep us from getting overwhelmed by the options available as we expand our data munging toolkit. The start of the talk will focus on the core operations of
+
+Selecting and Indexing
+Reshaping and Tidy Data
+Summarization
+Grouped operations
+Merging and Joining
+
+These operations can be combined into "pandastic" method chains that flow seamlessly from data IO to analysis.
+Time permitting we'll look at some of the more specialized areas of pandas including Categoricals, time-series analysis, Hierarchical Indexes, chunked / out of core processing, and data pipelines.
+Learning to use a library the size of pandas is a huge commitment. What's more, your goal is rarely achieved just with pandas. Rather, pandas gets you to the point where you can begin your interesting analysis. We'll build the foundation to quickly get you past the data munging, to the analysis.

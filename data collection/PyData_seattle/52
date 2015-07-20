@@ -1,0 +1,16 @@
+Saturday 5:25 p.m.–6:05 p.m.
+James McCaffrey
+-----
+Title
+-----
+Swarm Intelligence Optimization using Python
+-----
+Description
+-----
+See Abstract
+-----
+Abstract
+-----
+Swarm intelligence (SI) algorithms mimic the collective behavior of groups such as flocks of birds and schools of fish. This session describes in detail three major SI algorithms: amoeba method optimization, particle swam optimization, and simulated bee colony optimization. Attendees will receive Python source code for each algorithm.
+Although SI algorithms have been studied for years, there is little practical implementation guidance available. This session describes the scenarios when SI algorithms are useful (and scenarios when SI algorithms are not useful), carefully explains how three major SI algorithms work, and presents a production quality, working demo, coded using Python, of each algorithm. Attendees will leave this session with a clear understanding of exactly what SI algorithms are, and have the knowledge needed to apply them immediately.
+This session assumes attendees have intermediate or higher level coding ability with Python, but does not assume any knowledge of swarm intelligence.

@@ -1,0 +1,14 @@
+Sunday 11:40 a.m.–12:20 p.m.
+John Backus Mayes
+-----
+Title
+-----
+Energy Efficiency Analysis with Python
+-----
+Description
+-----
+Using Python data analysis libraries to process large volumes of utility program data, it is now possible to continuously monitor and analyze the energy savings realized from large-scale energy efficiency programs at utilities across the country, optimizing the effectiveness of these programs to help utilities and their customers save money and energy.
+-----
+Abstract
+-----
+In determining the efficacy of energy efficiency programs at utilities, traditional methods may produce accurate assessments of energy savings but can also take considerable time to yield actionable results. With increased availability of high-quality utility program data, and using modern data analysis tools from the SciPy stack, it is now possible to predict and estimate savings much more quickly and efficiently. Machine-learning tools such as LASSO and nearest-neighbors may be used to identify the most significant drivers of program performance and assign suitable comparison groups from the full set of premises in each utility's service area, from which empirical estimates of bias and variance may be obtained. Provided with robust, granular, near-real-time information on energy savings and other performance metrics, energy efficiency programs can respond immediately to observed problems and improve program effectiveness on an ongoing basis. The result is increased savings for both the utility and its customers, as measured in both dollars and kWh.

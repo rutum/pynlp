@@ -1,0 +1,16 @@
+Saturday 3:45 p.m.–4:25 p.m.
+Austin Gross
+-----
+Title
+-----
+Estimating Impact on Bicycle Ridership of Bike Share Program in Seattle, WA
+-----
+Description
+-----
+Using public data on bicycle ridership collected continuously at fixed locations we estimate the effect on ridership from introducing a bike share program in certain neighborhoods of Seattle, WA. The results are displayed on a hosted site and visualized using D3. The analysis is performed real-time as data updates over an API. 
+-----
+Abstract
+-----
+By using a Differences-in-Differences econometric technique we recover the causal effect of introducing a bike share program in Seattle, WA on ridership at several locations throughout the city. We control for seasonal effects as well as temperature and rainfall.
+We build a website to serve as an interactive walk-through of the statistical analysis. By allowing users to explore both the raw and the transformed time-series we hope to grow intuition regarding the more complicated statistics that underlay the analysis.
+The web framework uses off-the-shelf packages to create the website, perform the analysis and display the results. The analysis and display components are separated to allow for continuous integration in each as well as a general framework for asking and answering questions involving time-series data.

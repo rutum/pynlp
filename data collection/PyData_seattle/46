@@ -1,0 +1,14 @@
+Saturday 4:35 p.m.–5:15 p.m.
+Phillip Cloud
+-----
+Title
+-----
+Blaze and Odo
+-----
+Description
+-----
+Blaze and Odo are designed to help domain experts answer questions more quickly. They work together by providing a symbolic computation layer (blaze) alongside a graph of data converters (odo) that enables users to move seamlessly between formats in the most performant way. We discuss both libraries in the context of PyData and emerging data analytics technologies. 
+-----
+Abstract
+-----
+Blaze separates expressions from computation. Odo moves complex data resources from point A to point B. Together Blaze and Odo smooth over many of the complexities of computing with large data warehouse technologies like Redshift, Impala and HDFS. Because we designed Blaze and Odo with PyData in mind they also integrate well with pandas, numpy, and a host of other foundational libraries. We show examples of both Blaze and Odo in action and discuss the design behind each library.

@@ -1,0 +1,22 @@
+Sunday 4 p.m.–4:40 p.m.
+David Gerson
+-----
+Title
+-----
+Social Media Brand Positioning Workflow
+-----
+Description
+-----
+Social Media is becoming ever pervasive in  modern culture.    One of the simplest use cases of social data is as a "temperature check" for how a brand is performing.  This talk offers a simple walk-through of how python can be used  to take Social Data from its raw form and transform it into a usable visualization to help understand the market a company exists in.  
+-----
+Abstract
+-----
+This project focus on how social media data extracted about the fast food industry can simply and repeatably be turned into a system for analyzing market position.  This market position can by proxy be used to derive strategy. 
+
+Data will be extracted from Twitter for a variety of brands that operate in the same market space.
+That data will be split into its individual words and using nltk it will be cast to its root word.
+A TFIDF (sci-kit or raw code) analysis will be used to identify which words are uniquely used to describe the industry.
+The data will then be topic modeled in gensim to further reduce the number of dimensions and to reduce the number of feature vectors that need to be tracked.
+Finally the data will be reduced into a 4-plot using Correspondence Analysis or MDS.  
+
+While these are all independently simple the analysis itself is extensible enough to solve this problem in a variety of circumstances.           

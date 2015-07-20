@@ -1,0 +1,14 @@
+Sunday 11:40 a.m.–12:20 p.m.
+Andreas Schreiber, Michael Meinel
+-----
+Title
+-----
+High-Throughput Processing of Space Debris Data
+-----
+Description
+-----
+Space Debris are defunct objects in space, including old space vehicles or fragments from collisions. Space debris can cause great damage to functional space ships and satellites. Thus detection of space debris and prediction of their orbital paths are essential. The talk shows a Python based infrastructure for storing space debris data from sensors and high-throughput processing of that data. 
+-----
+Abstract
+-----
+Space Debris are defunct objects in space, including old space vehicles (such as satellites or rocket stages) or fragments from collisions. Space debris can cause great damage to functional space ships and satellites. Thus detection of space debris and prediction of their orbital paths are essential for today's operation of space missions. The talk shows the Python based infrastructures BACARDI for gathering and storing space debris data from sensors and Skynet for high-throughput data processing and orbital collision detection.  
