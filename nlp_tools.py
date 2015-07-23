@@ -37,8 +37,10 @@ def word_count(text, wc=None):
     # tokenize by whitespace
     tokens = text.split(" ")
     for t in tokens:
-        if not is_stopword(t):
-            wc[t] += 1
+        # Uncomment if you want to remove stopwords
+        # if not is_stopword(t):
+        #     wc[t] += 1
+        wc[t] += 1  # comment, if stopwords are being removed
     return(wc)
 
 def document_frequency(f_id, text, df=None):
@@ -49,10 +51,23 @@ def document_frequency(f_id, text, df=None):
         df[t].add(f_id)
     return(df)
 
+def inversedf(w, df, count):
+    nonlog = count/len(df[w])
+    if nonlog <= 0:
+        return 0.00001
+    else:
+        return math.log(nonlog)
+
+def bulk_idf(wc, df, count):
+    idf = defaultdict(int)
+    for w in wc:
+        idf[w] = math.log(count/len(df[w]))
+    return idf
+
 def tf_idf(wc, df, count):
     tfidf = defaultdict(float)
     for w in wc:
-        tfidf[w] = wc[w] * math.log(count/len(df[w]))
+        tfidf[w] = wc[w] * inversedf(w, df, count)
     return(tfidf)
 
 def information_extraction(filename):
@@ -77,18 +92,68 @@ def similarity(vector1, vector2):
     return score
 
 def build_search_model(filename):
-    # build vocabulary
-    # for each document:
-    #   compute TF
-    #   compute IDF
-    #   update document vector
-    # return the list of vectors
+    import numpy
+    import json
+    wc = defaultdict(int)
+    df = defaultdict(set)
+    count = 0
+    # first compute the global IDF
 
-model = build_search_model(filename)
+    with open(filename) as fin:
+        for line in fin:
+            count += 1
+            current = json.loads(line)
+            text = normalize(current["abstract"] + " " + \
+                current["description"] + " " + current["title"])
+            wc = word_count(text, wc)
+            df = document_frequency(count, text, df)
+    numdocs = count
+    idf = bulk_idf(wc, df, numdocs)
 
-def search(phrase):
-    # build TF*IDF vector for the search phrase
-    # for each document:
-    #   compute similarity between phrase and document
-    # return the document with highest similarity with phrase
+    #initialize an numpy array with zeros
+    docvec = numpy.zeros(shape=(count, len(wc)), dtype=float)
 
+    # compute an index
+    count = 0
+    word2index = {}
+    for w in wc:
+        word2index[w] = count
+        count+=1
+
+    count = 0
+    with open(filename) as fin:
+        for line in fin:
+            current = json.loads(line)
+            text = normalize(current["abstract"] + " " + \
+                current["description"] + " " + current["title"])
+            wc = word_count(text, wc)
+            tfidf = tf_idf(wc, df, count)# build vocabulary
+            for token in tfidf:
+                docvec[count, word2index[token]] = tfidf[token]
+            count += 1
+    return docvec, idf, word2index, numdocs
+
+model, idf, word2id, numdocs = build_search_model(filename)
+
+def search(phrase, idf, word2id, numdocs, model):
+    wc = defaultdict(int)
+    wc = word_count(phrase, wc)
+    docvec = numpy.zeros(shape=(1, len(idf)), dtype=float)
+    tfidf = tf_idf(wc, df, numdocs)# build vocabulary
+    for token in tfidf:
+        docvec[0, word2index[token]] = tfidf[token]
+
+    max_sim = -99
+    index = -99
+    count=0
+    for m in model:
+        sim = similarity(m, docvec[0])
+        if max_sim == -99:
+            max_sim = sim
+            index = count
+        else:
+            if max_sim < sim:
+                max_sim = sim
+                index = count
+        count+=1
+    return max_sim, index
