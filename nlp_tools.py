@@ -38,9 +38,9 @@ def word_count(text, wc=None):
     tokens = text.split(" ")
     for t in tokens:
         # Uncomment if you want to remove stopwords
-        # if not is_stopword(t):
-        #     wc[t] += 1
-        wc[t] += 1  # comment, if stopwords are being removed
+        if not is_stopword(t):
+            wc[t] += 1
+        #wc[t] += 1  # comment, if stopwords are being removed
     return(wc)
 
 def document_frequency(f_id, text, df=None):
@@ -133,9 +133,9 @@ def build_search_model(filename):
             count += 1
     return docvec, idf, word2index, numdocs
 
-model, idf, word2id, numdocs = build_search_model(filename)
+model, idf, word2index, numdocs = build_search_model(filename)
 
-def search(phrase, idf, word2id, numdocs, model):
+def search(phrase, idf, word2index, numdocs, model):
     wc = defaultdict(int)
     wc = word_count(phrase, wc)
     docvec = numpy.zeros(shape=(1, len(idf)), dtype=float)
